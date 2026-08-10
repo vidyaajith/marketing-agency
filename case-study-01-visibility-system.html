@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marketing Agency, US | Total Visibility | Case Study 01</title>
+<meta name="description" content="A 30-50 account marketing agency where leadership finally saw the work in real time, and the founder got out of the status-update loop entirely.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#08080A;
+    --ink-2:#0E0E11;
+    --ink-3:#141418;
+    --line:rgba(255,255,255,.09);
+    --line-2:rgba(255,255,255,.16);
+    --paper:#F2EEE6;
+    --paper-dim:rgba(242,238,230,.62);
+    --paper-faint:rgba(242,238,230,.38);
+    --gold:#D9A94C;
+    --gold-soft:rgba(217,169,76,.13);
+    --rust:#C4643C;
+    --rust-soft:rgba(196,100,60,.13);
+    --green:#5FD08A;
+    --green-soft:rgba(95,208,138,.13);
+    --serif:'Instrument Serif', Georgia, serif;
+    --sans:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --pad: clamp(20px, 4vw, 72px);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ink);color:var(--paper);font-family:var(--sans);
+    font-weight:300;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  body::before{
+    content:'';position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.035;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  ::selection{background:var(--gold);color:var(--ink)}
+
+  #progress{position:fixed;top:0;left:0;height:2px;width:0%;z-index:100;background:linear-gradient(90deg,var(--rust),var(--gold),var(--green));transition:width .1s linear}
+
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:90;display:flex;align-items:center;
+    justify-content:space-between;padding:14px var(--pad);backdrop-filter:blur(14px);
+    background:rgba(8,8,10,0);border-bottom:1px solid transparent;
+    transition:background .4s ease,border-color .4s ease,padding .4s ease;
+  }
+  nav.stuck{background:rgba(8,8,10,.85);border-bottom-color:var(--line);padding:11px var(--pad)}
+  .nav-mark{font-size:clamp(11px,1.2vw,13px);font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--paper-dim)}
+  .nav-mark b{color:var(--paper);font-weight:500}
+  .nav-mark a{color:var(--paper-dim);text-decoration:none;border-bottom:1px solid var(--line-2)}
+  .nav-mark a:hover{color:var(--gold);border-color:var(--gold)}
+  .nav-cta{
+    font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:500;color:var(--ink);
+    background:var(--paper);text-decoration:none;padding:10px 20px;border-radius:100px;
+    transition:background .3s ease,transform .3s ease;white-space:nowrap;
+  }
+  .nav-cta:hover{background:var(--gold);transform:translateY(-1px)}
+
+  section{position:relative;z-index:2;padding:clamp(54px,7vw,98px) var(--pad)}
+  .wrap{max-width:1220px;margin:0 auto}
+  .narrow{max-width:840px;margin:0 auto}
+
+  .eyebrow{font-size:clamp(14px,1.7vw,19px);letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--gold);display:flex;align-items:center;gap:16px;margin-bottom:22px}
+  .eyebrow::after{content:'';flex:1;height:1px;background:var(--line);max-width:120px}
+
+  h2{font-family:var(--serif);font-weight:400;font-size:clamp(34px,5.2vw,60px);line-height:1.04;letter-spacing:-.02em;margin-bottom:20px}
+  h2 em{font-style:italic;color:var(--gold)}
+  h2:has(+.h2sub),h2:has(+.h2sub[style]){margin-bottom:16px}
+  .rule{width:clamp(40px,4.4vw,56px);height:2px;background:var(--gold);border-radius:2px;margin-bottom:clamp(16px,1.9vw,22px)}
+  .relief .rule,.final .rule{margin-left:auto;margin-right:auto}
+  .h2sub{font-family:var(--serif);font-weight:400;font-size:clamp(21px,2.9vw,33px);line-height:1.16;
+         letter-spacing:-.018em;color:var(--paper-dim);margin-bottom:20px;max-width:28ch}
+  .h2sub em{font-style:italic;color:var(--gold)}
+  .lede{font-size:clamp(19px,2.1vw,24px);line-height:1.55;color:var(--paper-dim);max-width:60ch}
+  .lede strong{color:var(--paper);font-weight:400}
+
+  /* ── hero ───────────────────────────────── */
+  .hero{min-height:auto;display:flex;flex-direction:column;justify-content:center;padding-top:clamp(112px,14vw,150px);padding-bottom:clamp(48px,6vw,72px);overflow:hidden}
+  .hero::after{
+    content:'';position:absolute;z-index:-1;width:min(150vw,1500px);height:min(150vw,1500px);
+    top:-60%;right:-35%;border-radius:50%;
+    background:radial-gradient(circle,rgba(217,169,76,.13) 0%,rgba(196,100,60,.06) 38%,transparent 66%);filter:blur(30px);
+  }
+  .hero-tag{
+    display:inline-flex;align-items:center;gap:12px;align-self:flex-start;
+    border:1px solid var(--line-2);border-radius:100px;padding:7px 16px 7px 12px;margin-bottom:28px;
+    font-size:clamp(12px,1.4vw,14px);letter-spacing:.16em;text-transform:uppercase;color:var(--paper-dim);
+  }
+  .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 12px var(--gold)}
+  .client{font-size:clamp(14px,1.9vw,19px);letter-spacing:.3em;text-transform:uppercase;font-weight:500;color:var(--paper-faint);margin-bottom:16px}
+  h1{font-family:var(--serif);font-weight:400;font-size:clamp(52px,11vw,140px);line-height:.9;letter-spacing:-.035em;margin-bottom:24px}
+  h1 .it{font-style:italic;display:block;color:var(--gold)}
+  .hero-sub{font-size:clamp(19px,2.2vw,26px);line-height:1.42;color:var(--paper-dim);max-width:44ch;margin-bottom:42px}
+  .hero-sub b{color:var(--paper);font-weight:400}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:46px}
+
+  .btn{display:inline-flex;align-items:center;gap:12px;text-decoration:none;font-size:14px;font-weight:500;padding:16px 30px;border-radius:100px;transition:all .35s cubic-bezier(.22,1,.36,1)}
+  .btn-primary{background:var(--paper);color:var(--ink)}
+  .btn-primary:hover{background:var(--gold);transform:translateY(-2px);box-shadow:0 14px 40px rgba(217,169,76,.28)}
+  .btn-ghost{border:1px solid var(--line-2);color:var(--paper-dim)}
+  .btn-ghost:hover{border-color:var(--paper);color:var(--paper)}
+  .btn .arw{transition:transform .35s cubic-bezier(.22,1,.36,1)}
+  .btn:hover .arw{transform:translateX(4px)}
+
+  /* ── hero stats ─────────────────────────── */
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+  .stat{padding:24px 24px 0 0;border-right:1px solid var(--line)}
+  .stat:last-child{border-right:none}
+  .stat .n{font-family:var(--serif);font-size:clamp(36px,5vw,62px);line-height:1;letter-spacing:-.02em;display:flex;align-items:center;gap:14px;margin-bottom:10px}
+  .stat .n span{color:var(--gold)}
+  .stat.up .n{color:var(--green)}
+  .stat.up .n span{color:var(--green)}
+  .stat .l{font-size:clamp(13px,1.4vw,15px);letter-spacing:.05em;color:var(--paper-faint);line-height:1.45;max-width:22ch}
+  .uparrow{width:clamp(26px,3.4vw,40px);height:auto;flex-shrink:0}
+  .spark{display:block;margin-top:14px;width:100%;max-width:180px;height:auto}
+
+  /* ── illustration primitives ────────────── */
+  .ill{display:block;width:100%;height:auto}
+  .figure{border:1px solid var(--line);border-radius:6px;background:var(--ink-2);padding:clamp(16px,2.1vw,26px);position:relative;overflow:hidden}
+  .figure .cap{
+    font-size:clamp(12px,1.3vw,14px);letter-spacing:.16em;text-transform:uppercase;color:var(--paper-faint);
+    margin-top:14px;display:flex;align-items:center;gap:10px;
+  }
+  .figure .cap::before{content:'';width:16px;height:1px;background:var(--gold)}
+
+  .draw path,.draw line,.draw circle,.draw rect,.draw polyline{
+    stroke-dasharray:var(--len,600);stroke-dashoffset:var(--len,600);
+    transition:stroke-dashoffset 1.5s cubic-bezier(.22,1,.36,1);
+  }
+  .rv.in .draw path,.rv.in .draw line,.rv.in .draw circle,.rv.in .draw rect,.rv.in .draw polyline{stroke-dashoffset:0}
+  .grow{transform:scaleY(0);transform-origin:bottom;transform-box:fill-box;transition:transform 1s cubic-bezier(.22,1,.36,1)}
+  .rv.in .grow{transform:scaleY(1)}
+  .fadein{opacity:0;transition:opacity .9s ease .5s}
+  .rv.in .fadein{opacity:1}
+
+  .ico{width:22px;height:22px;flex-shrink:0;stroke:var(--gold);fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+  .ico.red{stroke:var(--rust)}
+  .ico.grn{stroke:var(--green)}
+  .icobox{
+    width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+    background:var(--gold-soft);border:1px solid rgba(217,169,76,.2);margin-bottom:24px;
+  }
+  .icobox.red{background:var(--rust-soft);border-color:rgba(196,100,60,.24)}
+
+  /* ── challenge ──────────────────────────── */
+  .split{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(32px,4.4vw,68px);align-items:start}
+  .gaps{list-style:none;margin-top:8px}
+  .gaps li{display:flex;gap:16px;padding:19px 0;border-bottom:1px solid var(--line);font-size:clamp(16px,1.7vw,18px);color:var(--paper-dim);line-height:1.55;align-items:flex-start}
+  .gaps li:first-child{border-top:1px solid var(--line)}
+  .gaps b{color:var(--paper);font-weight:400}
+  .gaps .ico{margin-top:3px}
+
+  /* ── approach ───────────────────────────── */
+  .approach{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:40px}
+  .ap{background:var(--ink);padding:clamp(22px,2.6vw,30px);transition:background .4s ease}
+  .ap:hover{background:var(--ink-3)}
+  .ap .num{font-family:var(--serif);font-size:13px;letter-spacing:.1em;color:var(--gold);display:block;margin-bottom:18px}
+  .ap h3{font-size:clamp(18px,1.9vw,21px);font-weight:500;letter-spacing:-.01em;margin-bottom:12px;line-height:1.3}
+  .ap p{font-size:clamp(15px,1.6vw,17px);color:var(--paper-faint);line-height:1.55}
+
+  .leak{
+    margin-top:40px;border:1px solid rgba(217,169,76,.28);background:var(--gold-soft);border-radius:6px;
+    padding:clamp(24px,3vw,36px);display:flex;gap:clamp(18px,2.4vw,30px);align-items:center;flex-wrap:wrap;
+  }
+  .leak .tag{font-size:clamp(13px,1.5vw,16px);letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--gold);white-space:nowrap}
+  .leak p{font-family:var(--serif);font-size:clamp(20px,2.7vw,32px);line-height:1.28;flex:1;min-width:260px}
+
+  /* ── steps ──────────────────────────────── */
+  .step{display:grid;grid-template-columns:96px 1fr;gap:clamp(18px,3vw,44px);padding:clamp(34px,3.6vw,50px) 0;border-bottom:1px solid var(--line)}
+  .step:first-of-type{border-top:1px solid var(--line)}
+  .step-n{font-family:var(--serif);font-size:clamp(40px,5vw,68px);line-height:1;color:transparent;-webkit-text-stroke:1px rgba(242,238,230,.28);transition:color .5s ease,-webkit-text-stroke-color .5s ease}
+  .step:hover .step-n{color:var(--gold);-webkit-text-stroke-color:var(--gold)}
+  .step h3{font-family:var(--serif);font-weight:400;font-size:clamp(31px,4.7vw,56px);line-height:1.04;letter-spacing:-.028em;margin-bottom:14px;display:flex;align-items:center;gap:clamp(12px,1.6vw,18px)}
+  .hico{width:clamp(22px,2.7vw,34px);height:clamp(22px,2.7vw,34px);stroke-width:1.15;opacity:.9}
+  .step .sub{font-size:clamp(18px,2vw,23px);font-weight:500;color:var(--paper);line-height:1.32;letter-spacing:-.012em;margin-bottom:14px;max-width:46ch}
+  .step p.d{font-size:clamp(17px,1.8vw,19px);color:var(--paper-dim);max-width:56ch;line-height:1.58}
+
+  .bullets{list-style:none;margin-top:24px;display:grid;gap:15px;max-width:64ch}
+  .bullets li{display:flex;gap:14px;font-size:clamp(16px,1.7vw,18px);color:var(--paper-faint);line-height:1.55;align-items:flex-start}
+  .bullets .ico{width:18px;height:18px;margin-top:3px}
+  .bullets b{color:var(--paper);font-weight:500;display:block;margin-bottom:2px}
+
+  .metric-inline{display:inline-flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:22px;border:1px solid var(--line-2);border-radius:6px;padding:16px 24px}
+  .metric-inline .t{font-size:clamp(14px,1.5vw,16px);color:var(--paper-faint);max-width:30ch}
+
+  .ring{width:72px;height:72px;flex-shrink:0}
+  .ring .bg{fill:none;stroke:var(--line-2);stroke-width:6}
+  .ring .fg{fill:none;stroke:var(--gold);stroke-width:6;stroke-linecap:round;stroke-dasharray:201;stroke-dashoffset:201;transform:rotate(-90deg);transform-origin:50% 50%;transition:stroke-dashoffset 1.6s cubic-bezier(.22,1,.36,1) .2s}
+  .rv.in .ring .fg{stroke-dashoffset:2}
+  .ring text{font-family:var(--serif);font-size:20px;fill:var(--paper)}
+
+  /* ── image placeholder ──────────────────── */
+  .imgslot{
+    margin-top:26px;border:1px dashed var(--line-2);border-radius:6px;background:var(--ink-2);
+    aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:8px;text-align:center;padding:24px;
+  }
+  .imgslot .ico{width:26px;height:26px;margin-bottom:6px}
+  .imgslot .k{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+  .imgslot .n{font-family:var(--serif);font-size:clamp(18px,2.2vw,26px);color:var(--paper-dim)}
+  .imgslot .s{font-size:12px;color:var(--paper-faint);font-family:ui-monospace,Menlo,monospace}
+
+  /* ── results ────────────────────────────── */
+  .results{background:var(--ink-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:38px}
+  .r{background:var(--ink-2);padding:clamp(26px,3vw,38px);display:flex;flex-direction:column;gap:16px}
+  .r .vis{height:96px;display:flex;align-items:flex-end}
+  .r .big{font-family:var(--serif);font-size:clamp(42px,6.2vw,76px);line-height:.95;letter-spacing:-.03em;color:var(--gold)}
+  .r .big.grn{color:var(--green)}
+  .r .big.word{font-size:clamp(28px,4vw,48px);color:var(--paper)}
+  .r p{font-size:clamp(16px,1.7vw,18px);color:var(--paper-dim);line-height:1.5}
+
+  /* ── timeline ───────────────────────────── */
+  .timeline{margin-top:46px;border-top:1px solid var(--line);padding-top:36px}
+  .tl-head{font-size:clamp(13px,1.5vw,17px);letter-spacing:.2em;text-transform:uppercase;color:var(--paper-faint);margin-bottom:24px}
+  .tl{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+  .tl-item{position:relative;padding:30px 22px 0 0}
+  .tl-item::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--line)}
+  .tl-item::after{content:'';position:absolute;top:-5px;left:0;width:10px;height:10px;border-radius:50%;background:var(--ink-2);border:2px solid var(--gold)}
+  .tl-item:last-child::after{background:var(--green);border-color:var(--green);box-shadow:0 0 16px rgba(95,208,138,.5)}
+  .tl-item .w{font-family:var(--serif);font-size:clamp(26px,2.8vw,32px);color:var(--gold);margin-bottom:8px}
+  .tl-item:last-child .w{color:var(--green)}
+  .tl-item p{font-size:clamp(15px,1.6vw,17px);color:var(--paper-faint);line-height:1.5;max-width:28ch}
+
+  /* ── relief ─────────────────────────────── */
+  .relief{text-align:center;position:relative;overflow:hidden}
+  .relief::after{content:'';position:absolute;z-index:-1;left:50%;top:50%;transform:translate(-50%,-50%);width:min(120vw,1100px);height:min(120vw,1100px);border-radius:50%;background:radial-gradient(circle,rgba(95,208,138,.09) 0%,transparent 62%)}
+  .relief .eyebrow{justify-content:center}
+  .relief .eyebrow::after,.relief .eyebrow::before{content:'';flex:none;width:60px;height:1px;background:var(--line)}
+  .relief h2{font-size:clamp(38px,6.6vw,80px);max-width:16ch;margin:0 auto 24px}
+  .relief .lede{margin:0 auto}
+  .weekvis{max-width:620px;margin:40px auto 0}
+
+  .quoteslot{max-width:760px;margin:36px auto 0;border:1px dashed var(--line-2);border-radius:6px;padding:clamp(24px,3vw,34px);background:var(--ink-2);text-align:left}
+  .quoteslot .k{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+  .quoteslot p{font-family:var(--serif);font-style:italic;font-size:clamp(20px,2.6vw,30px);line-height:1.3;color:var(--paper-dim)}
+  .quoteslot .h{font-size:12px;color:var(--paper-faint);margin-top:16px;font-family:ui-monospace,Menlo,monospace}
+
+  /* ── insight ────────────────────────────── */
+  .insight{background:var(--paper);color:var(--ink);text-align:center}
+  .insight .eyebrow{color:var(--rust);justify-content:center}
+  .insight .eyebrow::after,.insight .eyebrow::before{content:'';flex:none;width:60px;height:1px;background:rgba(8,8,10,.16)}
+  .insight blockquote{font-family:var(--serif);font-size:clamp(30px,5.6vw,66px);line-height:1.1;letter-spacing:-.025em;max-width:19ch;margin:0 auto}
+  .insight .attr{margin-top:28px;font-size:clamp(12px,1.4vw,15px);letter-spacing:.24em;text-transform:uppercase;color:rgba(8,8,10,.45);font-weight:500}
+  .insight .quotemark{width:40px;height:auto;margin:0 auto 18px;display:block;opacity:.32}
+
+  /* ── final ──────────────────────────────── */
+  .final{text-align:center;position:relative;overflow:hidden;padding-top:clamp(70px,9vw,120px)}
+  .final::after{content:'';position:absolute;z-index:-1;left:50%;bottom:-55%;transform:translateX(-50%);width:min(140vw,1300px);height:min(140vw,1300px);border-radius:50%;background:radial-gradient(circle,rgba(196,100,60,.14) 0%,rgba(217,169,76,.06) 40%,transparent 66%);filter:blur(24px)}
+  .final h2{font-size:clamp(38px,7vw,84px);max-width:15ch;margin:0 auto 22px}
+  .final .lede{margin:0 auto 34px;text-align:center}
+  .final .hero-actions{justify-content:center}
+
+  footer{border-top:1px solid var(--line);padding:26px var(--pad);display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;font-size:12px;letter-spacing:.06em;color:var(--paper-faint);position:relative;z-index:2}
+  footer a{color:var(--paper-dim);text-decoration:none;border-bottom:1px solid var(--line-2);padding-bottom:2px}
+  footer a:hover{color:var(--gold);border-color:var(--gold)}
+
+  .rv{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1)}
+  .rv.in{opacity:1;transform:none}
+
+  @media(max-width:1000px){
+    .approach{grid-template-columns:repeat(2,1fr)}
+    .split{grid-template-columns:1fr;gap:40px}
+    .rgrid{grid-template-columns:1fr}
+    .tl{grid-template-columns:1fr;gap:32px}
+    .tl-item{padding-right:0}
+  }
+  @media(max-width:720px){
+    .stats{grid-template-columns:1fr}
+    .stat{border-right:none;border-bottom:1px solid var(--line);padding:26px 0}
+    .stat:last-child{border-bottom:none}
+    .step{grid-template-columns:1fr;gap:16px}
+    .step-n{font-size:38px}
+    .step h3{gap:12px}
+    .hico{width:20px;height:20px}
+    .nav-cta{display:none}
+    .hero-actions .btn{flex:1;justify-content:center}
+  }
+  @media(max-width:520px){.approach{grid-template-columns:1fr}}
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .rv{opacity:1;transform:none}
+    .draw path,.draw line,.draw circle,.draw rect,.draw polyline{stroke-dashoffset:0}
+    .grow{transform:none}.fadein{opacity:1}
+    .ring .fg{stroke-dashoffset:2}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<nav id="nav">
+  <div class="nav-mark">Case Study <b>01</b> of 02 &nbsp;·&nbsp; Marketing Agency, US &nbsp;·&nbsp; <a href="case-study-02-delivery-system.html">Part 2 →</a></div>
+  <a class="nav-cta" href="#book">Book a call</a>
+</nav>
+
+<!-- ═══ 1. HERO ════════════════════════════════ -->
+<header class="hero">
+  <div class="wrap" style="width:100%">
+    <div class="hero-tag rv"><span class="dot"></span> Fractional COO · Operations Case Study · Part 1 of 2</div>
+    <div class="client rv">Marketing Agency, US</div>
+    <h1 class="rv">Total<span class="it">Visibility</span></h1>
+    <p class="hero-sub rv">A <b>30 to 50 account</b> agency where no two people were looking at the same picture, and the founder was the tiebreaker for every one of them.</p>
+
+    <div class="hero-actions rv">
+      <a class="btn btn-primary" href="#book">Book a discovery call <span class="arw">→</span></a>
+      <a class="btn btn-ghost" href="#challenge">Read the case study</a>
+    </div>
+
+    <div class="stats">
+      <div class="stat up rv">
+        <div class="n">
+          <svg class="uparrow" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <circle cx="20" cy="20" r="19" fill="rgba(95,208,138,.12)" stroke="rgba(95,208,138,.35)"/>
+            <path d="M20 27V13" stroke="#5FD08A" stroke-width="2.4" stroke-linecap="round"/>
+            <path d="M13.5 19.5 20 13l6.5 6.5" stroke="#5FD08A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>[X] hrs/wk</span>
+        </div>
+        <div class="l">Leadership hours returned from chasing status updates</div>
+        <svg class="spark" viewBox="0 0 180 44" fill="none" aria-hidden="true">
+          <path d="M2 38 C 26 36, 44 34, 62 30 S 100 24, 122 16 S 158 6, 178 3" stroke="#5FD08A" stroke-width="2" stroke-linecap="round"/>
+          <path d="M2 38 C 26 36, 44 34, 62 30 S 100 24, 122 16 S 158 6, 178 3 L178 44 L2 44Z" fill="url(#sg1)" opacity=".35"/>
+          <defs><linearGradient id="sg1" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#5FD08A" stop-opacity=".7"/>
+            <stop offset="1" stop-color="#5FD08A" stop-opacity="0"/>
+          </linearGradient></defs>
+          <circle cx="178" cy="3" r="3.2" fill="#5FD08A"/>
+        </svg>
+      </div>
+      <div class="stat rv">
+        <div class="n"><span data-count="100" data-suffix="%">0%</span></div>
+        <div class="l">Weekly leadership report, zero manual input</div>
+        <svg class="spark" viewBox="0 0 180 20" fill="none" aria-hidden="true">
+          <rect x="0" y="2" width="180" height="10" rx="5" fill="rgba(217,169,76,.14)"/>
+          <rect class="grow" x="0" y="2" width="180" height="10" rx="5" fill="#D9A94C" style="transform-origin:left;transform:scaleX(1) scaleY(1)"/>
+        </svg>
+      </div>
+      <div class="stat rv">
+        <div class="n"><span>30 to 50</span></div>
+        <div class="l">Client accounts under one live dashboard</div>
+        <svg class="spark" viewBox="0 0 180 44" fill="none" aria-hidden="true">
+          <g fill="rgba(217,169,76,.55)">
+            <circle cx="6" cy="6" r="3"/><circle cx="24" cy="6" r="3"/><circle cx="42" cy="6" r="3"/><circle cx="60" cy="6" r="3"/><circle cx="78" cy="6" r="3"/><circle cx="96" cy="6" r="3"/><circle cx="114" cy="6" r="3"/><circle cx="132" cy="6" r="3"/><circle cx="150" cy="6" r="3"/><circle cx="168" cy="6" r="3"/>
+            <circle cx="6" cy="24" r="3"/><circle cx="24" cy="24" r="3"/><circle cx="42" cy="24" r="3"/><circle cx="60" cy="24" r="3"/><circle cx="78" cy="24" r="3"/><circle cx="96" cy="24" r="3"/><circle cx="114" cy="24" r="3"/><circle cx="132" cy="24" r="3"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ 2. THE CHALLENGE ═══════════════════════ -->
+<section id="challenge">
+  <div class="wrap split">
+    <div>
+      <div class="rule rv"></div>
+      <h2 class="rv">The Challenge</h2>
+      <p class="h2sub rv">Nobody saw the <em>same</em> picture.</p>
+      <p class="lede rv">Multiple PMs, multiple service lines, strong delivery talent. What was missing wasn't skill, it was the connective tissue between the work. Every PM ran a different system and a personal method for tracking it.</p>
+
+      <div class="imgslot">
+        <svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+        <span class="k">Image Placeholder</span>
+        <span class="n">The before state: individual PM trackers and disconnected reports</span>
+        <span class="s">img-01-before-state.png · 16:9 · 1600&times;900</span>
+      </div>
+    </div>
+
+    <div>
+      <p class="rv" style="font-size:clamp(13px,1.5vw,16px);letter-spacing:.17em;text-transform:uppercase;color:var(--paper-faint);margin-bottom:20px;font-weight:500">Underneath it, four operational gaps</p>
+      <ul class="gaps">
+        <li class="rv"><svg class="ico red" viewBox="0 0 24 24"><path d="M9 15 15 9"/><path d="M13 5l1-1a4 4 0 0 1 6 6l-1 1"/><path d="M11 19l-1 1a4 4 0 0 1-6-6l1-1"/></svg><span><b>No shared system.</b> Every PM working from a different tool and personal method.</span></li>
+        <li class="rv"><svg class="ico red" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7Z"/><path d="M4 4l16 16" stroke-width="1.4"/></svg><span><b>Blind decision-making.</b> Leadership deciding from incomplete information.</span></li>
+        <li class="rv"><svg class="ico red" viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M2 20c0-4 3-6 6-6s6 2 6 6"/><path d="M14 14c3 0 6 2 6 6"/></svg><span><b>Founder as escalation point.</b> Pulled into delivery conversations daily.</span></li>
+        <li class="rv"><svg class="ico red" viewBox="0 0 24 24"><path d="M12 3 22 20H2Z"/><path d="M12 9v5"/><circle cx="12" cy="17" r="0.9"/></svg><span><b>Reactive signal.</b> Client issues surfacing as complaints, not early warnings.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 3. THE APPROACH ════════════════════════ -->
+<section id="approach" style="background:var(--ink-2);border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="rule rv"></div>
+    <h2 class="rv">My Approach</h2>
+    <p class="h2sub rv">Diagnosis <em>before</em> tooling.</p>
+    <p class="lede rv">No tool was touched for the first <strong>[X] weeks.</strong> Every system in use was mapped, every team member interviewed individually, and what leadership believed was happening was compared to what was actually happening.</p>
+
+    <div class="approach">
+      <div class="ap rv"><span class="num">01</span><div class="icobox"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div><h3>System mapping</h3><p>Catalogued every tool, spreadsheet, and personal tracker in active use across the team.</p></div>
+      <div class="ap rv"><span class="num">02</span><div class="icobox"><svg class="ico" viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M2 20c0-4 3-6 6-6s6 2 6 6"/><path d="M14 14c3 0 6 2 6 6"/></svg></div><h3>Individual interviews</h3><p>Talked to each team member alone, away from how the workflow was described from the top.</p></div>
+      <div class="ap rv"><span class="num">03</span><div class="icobox"><svg class="ico" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></div><h3>Belief vs. reality</h3><p>Compared leadership's mental model of account status against what was actually happening on the ground.</p></div>
+      <div class="ap rv"><span class="num">04</span><div class="icobox"><svg class="ico" viewBox="0 0 24 24"><circle cx="10" cy="10" r="7"/><path d="M10 7v6M7 10h6"/><path d="m21 21-5.5-5.5"/></svg></div><h3>Gap analysis</h3><p>The space between those two pictures became the real scope of the project.</p></div>
+    </div>
+
+    <div class="leak rv">
+      <svg class="ico" viewBox="0 0 24 24" style="width:36px;height:36px"><path d="M12 2s7 8 7 13a7 7 0 0 1-14 0c0-5 7-13 7-13Z"/></svg>
+      <span class="tag">The Leak</span>
+      <p>Quality depended on which PM owned the account, so growth multiplied risk instead of revenue.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 4. THE BUILD ═══════════════════════════ -->
+<section id="build">
+  <div class="wrap">
+    <div class="rule rv"></div>
+    <h2 class="rv">The Build</h2>
+    <p class="h2sub rv" style="margin-bottom:40px">Four moves, one <em>operating system.</em></p>
+
+    <div class="step rv">
+      <div class="step-n">01</div>
+      <div>
+        <h3><svg class="ico hico" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span>Executive Dashboard</span></h3>
+        <p class="sub">One live view, not four different opinions.</p>
+        <p class="d">Built a real-time status view across every active account, pulling from wherever the work actually lived, so leadership could see the business instead of asking about it.</p>
+
+        <div class="figure rv" style="margin-top:24px">
+          <svg class="ill draw" viewBox="0 0 720 190" fill="none" style="--len:260" aria-label="Account status feeding up into one live dashboard panel">
+            <rect x="20" y="20" width="140" height="34" rx="6" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.14)"/>
+            <rect x="190" y="20" width="140" height="34" rx="6" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.14)"/>
+            <rect x="360" y="20" width="140" height="34" rx="6" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.14)"/>
+            <rect x="530" y="20" width="140" height="34" rx="6" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.14)"/>
+            <g stroke="rgba(217,169,76,.45)" stroke-width="1.2">
+              <path d="M90 54v26h220v20"/><path d="M260 54v46"/><path d="M430 54v20h-170"/><path d="M600 54v20h-170"/>
+            </g>
+            <rect x="130" y="100" width="260" height="60" rx="8" fill="rgba(217,169,76,.1)" stroke="rgba(217,169,76,.45)"/>
+            <text x="260" y="126" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" letter-spacing="2" fill="#D9A94C">EXECUTIVE DASHBOARD</text>
+            <text x="260" y="144" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="rgba(242,238,230,.5)">REAL-TIME STATUS, EVERY ACTIVE ACCOUNT</text>
+          </svg>
+          <div class="cap">One panel, replacing four PM opinions</div>
+        </div>
+
+        <div class="imgslot">
+          <svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span class="k">Image Placeholder</span>
+          <span class="n">The live executive dashboard</span>
+          <span class="s">img-02-executive-dashboard.png · 16:9 · 1600&times;900</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="step rv">
+      <div class="step-n">02</div>
+      <div>
+        <h3><svg class="ico hico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg><span>Department Scorecards</span></h3>
+        <p class="sub">KPIs owned by the people who move them.</p>
+        <p class="d">Each function got its own scorecard, tracked against metrics that function's lead was directly responsible for moving, replacing vague status updates with numbers anyone could check.</p>
+
+        <ul class="bullets">
+          <li><svg class="ico" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></svg><span><b>Owned by function leads.</b> No department relies on the founder to interpret its own numbers.</span></li>
+          <li><svg class="ico" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></svg><span><b>Same metrics, every week.</b> Comparable over time instead of reconstructed from memory.</span></li>
+        </ul>
+
+        <div class="imgslot">
+          <svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span class="k">Image Placeholder</span>
+          <span class="n">A department scorecard, populated</span>
+          <span class="s">img-03-scorecard.png · 16:9 · 1600&times;900</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="step rv">
+      <div class="step-n">03</div>
+      <div>
+        <h3><svg class="ico hico" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg><span>Automated Weekly Report</span></h3>
+        <p class="sub">Zero manual input, every week.</p>
+        <p class="d">A leadership report now generates itself from the same live data, arriving on schedule with no one compiling it by hand.</p>
+
+        <div class="metric-inline">
+          <svg class="ring" viewBox="0 0 72 72">
+            <circle class="bg" cx="36" cy="36" r="32"/>
+            <circle class="fg" cx="36" cy="36" r="32"/>
+            <text x="36" y="42" text-anchor="middle">100%</text>
+          </svg>
+          <span class="t">Of the report is generated automatically, with no manual compilation.</span>
+        </div>
+
+        <div class="imgslot">
+          <svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span class="k">Image Placeholder</span>
+          <span class="n">The automation config, triggers and actions visible</span>
+          <span class="s">img-04-automation-config.png · 16:9 · 1600&times;900</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="step rv">
+      <div class="step-n">04</div>
+      <div>
+        <h3><svg class="ico hico" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4V5Z"/></svg><span>Reporting Conventions</span></h3>
+        <p class="sub">Information pushes up. The founder stopped pulling it down.</p>
+        <p class="d">Set conventions for how and when information moves from PM to leadership, so status updates became a built-in habit of the system rather than something the founder had to chase.</p>
+
+        <div class="figure rv" style="margin-top:24px">
+          <svg class="ill" viewBox="0 0 720 170" fill="none" aria-label="Status updates moving from manual chasing to a built-in convention">
+            <text x="20" y="26" font-family="Inter,sans-serif" font-size="9" letter-spacing="1.8" fill="rgba(196,100,60,.85)">BEFORE: FOUNDER PULLS</text>
+            <g class="fadein">
+              <rect x="20" y="38" width="130" height="30" rx="5" fill="rgba(196,100,60,.14)" stroke="rgba(196,100,60,.3)"/>
+              <rect x="196" y="38" width="130" height="30" rx="5" fill="rgba(196,100,60,.14)" stroke="rgba(196,100,60,.3)"/>
+              <rect x="372" y="38" width="130" height="30" rx="5" fill="rgba(196,100,60,.14)" stroke="rgba(196,100,60,.3)"/>
+              <g stroke="rgba(196,100,60,.5)" stroke-width="1.2" stroke-dasharray="3 4">
+                <path d="M150 53h46"/><path d="M326 53h46"/>
+              </g>
+              <text x="158" y="30" font-family="Inter,sans-serif" font-size="8" fill="rgba(196,100,60,.9)">asks</text>
+              <text x="334" y="30" font-family="Inter,sans-serif" font-size="8" fill="rgba(196,100,60,.9)">asks</text>
+            </g>
+            <text x="20" y="112" font-family="Inter,sans-serif" font-size="9" letter-spacing="1.8" fill="#5FD08A">AFTER: SYSTEM PUSHES</text>
+            <g class="fadein" style="transition-delay:.35s">
+              <rect x="20" y="124" width="482" height="30" rx="15" fill="rgba(95,208,138,.12)" stroke="rgba(95,208,138,.4)"/>
+              <g stroke="#5FD08A" stroke-width="1.4" fill="none" stroke-linecap="round">
+                <path d="M186 139h56"/><path d="M232 133l7 6-7 6"/>
+                <path d="M330 139h56"/><path d="M376 133l7 6-7 6"/>
+              </g>
+              <circle cx="96" cy="139" r="7" fill="rgba(95,208,138,.3)"/>
+            </g>
+          </svg>
+          <div class="cap">Status updates stopped waiting on someone to ask</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 5. RESULTS ═════════════════════════════ -->
+<section class="results">
+  <div class="wrap">
+    <div class="rule rv"></div>
+    <h2 class="rv">Measurable Success</h2>
+    <p class="h2sub rv">What changed, in <em>[X] weeks.</em></p>
+
+    <div class="rgrid">
+      <div class="r rv">
+        <div class="vis">
+          <svg viewBox="0 0 200 96" fill="none" style="width:100%;height:100%" aria-label="Leadership hours redirected from chasing status">
+            <rect class="grow" x="6" y="60" width="26" height="30" rx="3" fill="rgba(95,208,138,.22)"/>
+            <rect class="grow" x="42" y="48" width="26" height="42" rx="3" fill="rgba(95,208,138,.32)" style="transition-delay:.1s"/>
+            <rect class="grow" x="78" y="34" width="26" height="56" rx="3" fill="rgba(95,208,138,.45)" style="transition-delay:.2s"/>
+            <rect class="grow" x="114" y="20" width="26" height="70" rx="3" fill="rgba(95,208,138,.62)" style="transition-delay:.3s"/>
+            <g class="fadein" style="transition-delay:.55s">
+              <path d="M152 74 L186 22" stroke="#5FD08A" stroke-width="2.6" stroke-linecap="round"/>
+              <path d="M170 21h17v17" stroke="#5FD08A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+          </svg>
+        </div>
+        <div class="big grn">[X] hrs/wk</div>
+        <p>Hours leadership spent chasing status now spent running the business.</p>
+      </div>
+      <div class="r rv">
+        <div class="vis">
+          <svg viewBox="0 0 200 96" fill="none" style="width:100%;height:100%" aria-label="Weekly report fully automated">
+            <circle cx="48" cy="48" r="34" fill="none" stroke="rgba(217,169,76,.2)" stroke-width="8"/>
+            <circle class="fg2" cx="48" cy="48" r="34" fill="none" stroke="#D9A94C" stroke-width="8" stroke-linecap="round" stroke-dasharray="214" stroke-dashoffset="214" transform="rotate(-90 48 48)"/>
+            <text x="48" y="54" text-anchor="middle" font-family="Instrument Serif, serif" font-size="20" fill="#F2EEE6">100%</text>
+            <g font-family="Inter,sans-serif" font-size="9" fill="rgba(242,238,230,.5)">
+              <text x="112" y="30">Compiled automatically</text>
+              <text x="112" y="48">Delivered on schedule</text>
+              <text x="112" y="66">Zero manual input</text>
+            </g>
+          </svg>
+        </div>
+        <div class="big">100%</div>
+        <p>Of the leadership report requires zero manual compilation.</p>
+      </div>
+      <div class="r rv">
+        <div class="vis">
+          <svg viewBox="0 0 200 96" fill="none" style="width:100%;height:100%" aria-label="Founder removed from the status-update loop">
+            <path d="M100 8 62 26v22c0 24 16 40 38 46 22-6 38-22 38-46V26Z" fill="rgba(95,208,138,.1)" stroke="rgba(95,208,138,.5)" stroke-width="1.6"/>
+            <path d="m84 50 12 12 22-22" stroke="#5FD08A" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="big word">OUT</div>
+        <p>The founder is completely out of the status-update loop.</p>
+      </div>
+    </div>
+
+    <div class="figure rv" style="margin-top:40px">
+      <svg class="ill" viewBox="0 0 900 260" fill="none" aria-label="One operating system between the founder and the accounts">
+        <g class="fadein">
+          <rect x="366" y="18" width="168" height="42" rx="8" fill="rgba(95,208,138,.1)" stroke="rgba(95,208,138,.45)"/>
+          <text x="450" y="44" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" letter-spacing="2" fill="#5FD08A">FOUNDER</text>
+        </g>
+        <g class="draw" style="--len:120" stroke="rgba(95,208,138,.5)" stroke-width="1.4">
+          <path d="M450 60v30"/>
+        </g>
+        <g class="fadein" style="transition-delay:.3s">
+          <rect x="60" y="90" width="780" height="52" rx="10" fill="rgba(217,169,76,.09)" stroke="rgba(217,169,76,.45)"/>
+          <text x="450" y="112" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" letter-spacing="2.4" fill="#D9A94C">THE VISIBILITY SYSTEM</text>
+          <text x="450" y="130" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" letter-spacing="1.2" fill="rgba(242,238,230,.45)">EXECUTIVE DASHBOARD &middot; SCORECARDS &middot; AUTOMATED REPORT &middot; REPORTING CONVENTIONS</text>
+        </g>
+        <g class="draw" style="--len:120" stroke="rgba(217,169,76,.4)" stroke-width="1.2">
+          <path d="M150 142v34"/><path d="M270 142v34"/><path d="M390 142v34"/>
+          <path d="M510 142v34"/><path d="M630 142v34"/><path d="M750 142v34"/>
+        </g>
+        <g class="fadein" style="transition-delay:.55s">
+          <g fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.14)">
+            <rect x="106" y="176" width="88" height="42" rx="6"/>
+            <rect x="226" y="176" width="88" height="42" rx="6"/>
+            <rect x="346" y="176" width="88" height="42" rx="6"/>
+            <rect x="466" y="176" width="88" height="42" rx="6"/>
+            <rect x="586" y="176" width="88" height="42" rx="6"/>
+            <rect x="706" y="176" width="88" height="42" rx="6"/>
+          </g>
+          <text x="450" y="246" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" letter-spacing="2" fill="rgba(242,238,230,.3)">30 TO 50 CLIENT ACCOUNTS</text>
+        </g>
+      </svg>
+      <div class="cap">After: one system between the founder and every account</div>
+    </div>
+
+    <div class="timeline rv">
+      <div class="tl-head">[X] weeks, start to result</div>
+      <div class="tl">
+        <div class="tl-item"><div class="w">Phase 01</div><p>Diagnosis, weeks 1 to [X]. System mapping, individual interviews, no tooling touched.</p></div>
+        <div class="tl-item"><div class="w">Phase 02</div><p>Build, weeks [X] to [Y]. Dashboard, scorecards, and the automated report go live.</p></div>
+        <div class="tl-item"><div class="w">Phase 03</div><p>Adoption, week [Y] onward. Reporting conventions embedded, founder exits the loop.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 7. THE HUMAN OUTCOME ═══════════════════ -->
+<section class="relief">
+  <div class="narrow">
+    <div class="eyebrow rv">The outcome that mattered most</div>
+    <h2 class="rv">The founder stopped being the status report.</h2>
+    <p class="lede rv" style="text-align:center">From fielding every "where do we stand" question personally, to leadership monitoring the business on its own.</p>
+
+    <div class="weekvis rv">
+      <svg viewBox="0 0 620 140" fill="none" style="width:100%;height:auto" aria-label="A week reallocated from status-chasing to running the business">
+        <text x="0" y="18" font-family="Inter,sans-serif" font-size="9" letter-spacing="2" fill="rgba(196,100,60,.9)">BEFORE</text>
+        <rect x="0" y="30" width="620" height="26" rx="6" fill="rgba(196,100,60,.16)" stroke="rgba(196,100,60,.3)"/>
+        <text x="310" y="47" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" letter-spacing="1.4" fill="rgba(242,238,230,.7)">ANSWERING STATUS QUESTIONS, EVERY ACCOUNT</text>
+        <text x="0" y="98" font-family="Inter,sans-serif" font-size="9" letter-spacing="2" fill="#5FD08A">AFTER</text>
+        <rect x="0" y="110" width="196" height="26" rx="6" fill="rgba(217,169,76,.16)" stroke="rgba(217,169,76,.32)"/>
+        <rect x="208" y="110" width="412" height="26" rx="6" fill="rgba(95,208,138,.16)" stroke="rgba(95,208,138,.4)"/>
+      </svg>
+    </div>
+
+    <div class="quoteslot rv">
+      <div class="k">Placeholder &middot; founder quote</div>
+      <p>"[One specific line from the founder about what it felt like to stop being asked for status updates.]"</p>
+      <div class="h">Replace with a real quote, or delete this block entirely.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 8. KEY INSIGHT ═════════════════════════ -->
+<section class="insight">
+  <div class="narrow">
+    <svg class="quotemark rv" viewBox="0 0 44 32" fill="none" aria-hidden="true">
+      <path d="M0 32V18C0 8 6 1.5 16 0l2 5c-5.5 1.5-8.5 5-8.5 9H17v18Zm27 0V18C27 8 33 1.5 43 0l1 5c-5.5 1.5-8.5 5-8.5 9H44v18Z" fill="#C4643C"/>
+    </svg>
+    <div class="eyebrow rv">Key Insight</div>
+    <blockquote class="rv">When quality depends on which person owns the account, growth multiplies risk instead of revenue.</blockquote>
+    <div class="attr rv">Marketing Agency, US &middot; Case Study 01</div>
+  </div>
+</section>
+
+<!-- ═══ 9. CTA ═════════════════════════════════ -->
+<section class="final" id="book">
+  <div class="narrow">
+    <div class="eyebrow rv" style="justify-content:center">Work with me</div>
+    <h2 class="rv">Still the one everyone asks "where does this stand"?</h2>
+    <p class="lede rv" style="text-align:center">Visibility is step one, not the finish line. Once leadership can see the work, the next question is whether the work itself is consistent. That's Part 2.</p>
+    <div class="hero-actions rv" style="justify-content:center;margin-bottom:0">
+      <a class="btn btn-primary" href="#REPLACE-WITH-YOUR-CALENDLY-LINK">Book a discovery call <span class="arw">→</span></a>
+      <a class="btn btn-ghost" href="case-study-02-delivery-system.html">Read Part 2: The Delivery System <span class="arw">→</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>Fractional COO · Operations &amp; Systems</div>
+  <div><a href="#REPLACE-WITH-YOUR-CALENDLY-LINK">Book a call</a> &nbsp;·&nbsp; <a href="mailto:athmanaajith@gmail.com">Email</a> &nbsp;·&nbsp; <a href="case-study-02-delivery-system.html">Part 2 of 2</a></div>
+</footer>
+
+<script>
+(function(){
+  var nav=document.getElementById('nav'), bar=document.getElementById('progress');
+  function onScroll(){
+    var y=window.scrollY||document.documentElement.scrollTop;
+    nav.classList.toggle('stuck', y>60);
+    var h=document.documentElement.scrollHeight-window.innerHeight;
+    bar.style.width=(h>0?(y/h)*100:0)+'%';
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+
+  var groups=new WeakMap();
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var el=e.target, p=el.parentElement;
+      var i=groups.get(p)||0; groups.set(p,i+1);
+      el.style.transitionDelay=(Math.min(i,6)*70)+'ms';
+      el.classList.add('in');
+      el.querySelectorAll('.fg2').forEach(function(c){
+        setTimeout(function(){ c.style.transition='stroke-dashoffset 1.5s cubic-bezier(.22,1,.36,1)'; c.style.strokeDashoffset='21'; },200);
+      });
+      io.unobserve(el);
+    });
+  },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+
+  var cio=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var el=e.target, target=parseFloat(el.dataset.count);
+      var pre=el.dataset.prefix||'', suf=el.dataset.suffix||'';
+      var t0=null, dur=1300;
+      function tick(ts){
+        if(!t0) t0=ts;
+        var p=Math.min((ts-t0)/dur,1), eased=1-Math.pow(1-p,3);
+        el.textContent=pre+Math.round(target*eased)+suf;
+        if(p<1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+      cio.unobserve(el);
+    });
+  },{threshold:.5});
+  document.querySelectorAll('[data-count]').forEach(function(el){cio.observe(el);});
+})();
+</script>
+</body>
+</html>
